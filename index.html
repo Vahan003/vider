@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+</head>
+<style>
+  #navigation {
+    display: flex;
+    justify-content:space-around;
+    
+    padding: 5px;
+    width: 98%;
+  }
+  .link{
+    padding: 5px;
+    width: 20%;
+    background-color: rgb(134, 192, 255);
+    border-radius: 5px;
+    text-align: center;
+    transition: ease 0.9s;
+  }
+  .link:hover{
+    background-color: rgba(149, 200, 255, 0.586);
+  }
+  #screen {
+    display: none;
+    width: 95%;
+  }
+  .serv {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 10px;
+    padding: 5px;
+    align-items: center;
+    background-color: rgb(174, 250, 225);
+    border-radius: 10px;
+    border:1px solid rgb(138, 246, 210);
+  }
+  #myVideo{
+  position: fixed;
+  top: -10%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  }
+</style>
+<body>
+  <video autoplay muted loop id="myVideo" width="100%" height="130%">
+    <source src="./bee.webm" type="video/webm">
+  </video>
+  
+    <div id="navigation">
+       <a class = "link" onclick="onTab('welcome')">Welcome</a>
+       <a class = "link" onclick="onTab('support')">Support</a>
+       <a class = "link" onclick="onTab('contacts')">Contacts</a>
+    </div>
+    <div id = "screen">
+    </div>
+    <script>
+      var video = document.getElementById("myVideo");
+      video.pause();
+      setTimeout(()=>{
+        video.play();
+      },1000)
+    </script>
+    <script src = "index.js"></script>
+    <script src ="list.js"></script>
+</body>
+</html>
