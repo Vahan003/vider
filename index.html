@@ -41,6 +41,7 @@
   }
   #myVideo{
   position: fixed;
+  min-width: 190vh;
   top: -10%;
   left: 0;
   right: 0;
@@ -49,7 +50,7 @@
   }
 </style>
 <body>
-  <video autoplay muted loop id="myVideo" width="100%" height="130%">
+  <video autoplay muted loop id="myVideo" preload = "none">
     <source src="src/bee.webm" type="video/webm">
   </video>
   
@@ -62,10 +63,12 @@
     </div>
     <script>
       var video = document.getElementById("myVideo");
+      console.log(video)
+      video.setAttribute("width", "110%")
       video.pause();
       setTimeout(()=>{
         video.play();
-      },1000)
+      },2000)
     </script>
     <script src = "src/index.js"></script>
     <script src ="src/list.js"></script>
