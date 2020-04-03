@@ -1,0 +1,84 @@
+.navigation {
+    display: flex;
+    justify-content:space-around;
+    padding: 5px;
+    width: 98%;
+  }
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+  }
+.screen {
+    display: none;
+    width: 45%;
+  }
+.aside {
+    display: none;
+    width: 53%;
+}
+.inf {
+    margin: 10px;
+    padding: 5px;
+    background-color: whitesmoke;
+}
+.link{
+    padding: 5px;
+    width: 20%;
+    background-color: rgb(134, 192, 255);
+    border-radius: 5px;
+    text-align: center;
+    transition: ease 0.9s;
+    cursor: pointer;
+  }
+.link:hover{
+    background-color: rgba(149, 200, 255, 0.586);
+  }
+.serv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    margin: 10px;
+    padding: 5px;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border:1px solid whitesmoke;
+  }
+#myVideo{
+  position: fixed;
+  min-width: 190vh;
+  top: -10%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  }
+#inp {
+    padding: 10px;
+    margin: 5px;
+    width: 95%;
+  }
+.but{
+    width: 95%;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color:  rgb(134, 192, 255);
+    transition: ease 0.9s;
+  }
+.but:hover{
+    background-color:  rgba(149, 200, 255, 0.586);
+  }
+.data{
+    margin-left: 10px;
+  }
+.cont{
+    padding: 10px;
+    margin: 5px;
+    background-color: whitesmoke ;
+    width: 95%;
+  }

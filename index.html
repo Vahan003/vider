@@ -3,75 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="src/style.css">
     <title>...</title>
 </head>
-<style>
-  #navigation {
-    display: flex;
-    justify-content:space-around;
-    
-    padding: 5px;
-    width: 98%;
-  }
-  .link{
-    padding: 5px;
-    width: 20%;
-    background-color: rgb(134, 192, 255);
-    border-radius: 5px;
-    text-align: center;
-    transition: ease 0.9s;
-  }
-  .link:hover{
-    background-color: rgba(149, 200, 255, 0.586);
-  }
-  #screen {
-    display: none;
-    width: 95%;
-  }
-  .serv {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin: 10px;
-    padding: 5px;
-    align-items: center;
-    background-color: rgb(174, 250, 225);
-    border-radius: 10px;
-    border:1px solid rgb(138, 246, 210);
-  }
-  #myVideo{
-  position: fixed;
-  min-width: 190vh;
-  top: -10%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  }
-</style>
 <body>
-  <video autoplay muted loop id="myVideo" preload = "none">
+  <video autoplay muted loop id="myVideo" preload = "none" width="110%">
     <source src="src/bee.webm" type="video/webm">
   </video>
   
-    <div id="navigation">
-       <a class = "link" onclick="onTab('welcome')">Welcome</a>
-       <a class = "link" onclick="onTab('support')">Support</a>
-       <a class = "link" onclick="onTab('contacts')">Contacts</a>
+    <div class="navigation">
+       <div id = "welcome" class = "link" onclick="onTab('welcome')">Welcome</div>
+       <div id = "support" class = "link" onclick="onTab('support')">Support</div>
+       <div id = "contacts" class = "link" onclick="onTab('contacts')">Contacts</div>
     </div>
-    <div id = "screen">
+    <div class = "container">
+    <div id = "screen" class = "screen">
+    </div>
+    <div id = "aside" class = "aside">
+     </div>
     </div>
     <script>
-      var video = document.getElementById("myVideo");
-      console.log(video)
-      video.setAttribute("width", "110%")
+      const video = document.getElementById("myVideo")
       video.pause();
-      setInterval(()=>{
-        video.play();
-      },20)
-      setInterval(()=>{
-        video.pause();
-      },40)
     </script>
     <script src = "src/index.js"></script>
     <script src ="src/list.js"></script>

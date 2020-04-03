@@ -1,62 +1,53 @@
-let openedWelcome = false
-function open() {
-    console.log("open")
-}
 
 const welcome = (screen)=>{
-    openedWelcome = true
+    
+    
     screen.innerHTML = ""
-    video.pause()
+    video.play()
+    setTimeout(()=>{
+     video.pause()
+    }, 3000)
     list.forEach((el)=>{
-    screen.innerHTML = `<div id = ${el.id} class = 'serv'>
+    screen.innerHTML += `<div  class = 'serv'>
+    <div class = 'data'>
     <div>${el.service}</div>
     <div>${el.price}</div>
-    </div>${screen.innerHTML}`
+    </div>
+    <div id = ${el.id} ><button class= 'but'>More</button></div>
+    </div>`
     setTimeout(()=>{
-        document.getElementById(`${el.id}`).addEventListener("click",(e)=>{
-            e.target.innerHTML = e.target.innerHTML + `<div>${el.id}</div`
-            console.log(e.target)
+        document.getElementById(`${el.id}`).addEventListener("click",()=>{
+            const aside =  document.getElementById("aside")
+            aside.style.display = "flex"
+            aside.style.flexDirection = "column"
+            aside.innerHTML = `<div class = "inf">MORE INFORMATION ABOUT ${el.service}</div>`
         })
     })
     })
-
-    
-    // screen.innerHTML = arr.join("")
-    // const servs = document.getElementsByClassName("serv")
-    // console.log("welcome -> servs", servs[0])
-    
-
-    // screen.innerHTML = ""
-    // list.map((el)=>{
-    //    const elem =  document.createElement("div")
-    //    const sercive =  document.createElement("div")
-    //    const price =  document.createElement("div")
-       
-    //    elem.addEventListener("click", ()=>{console.log("elem")})
-    //    elem.setAttribute("id", el.id)
-    //    elem.setAttribute("class", "serv")
-
-    //    elem.append(sercive)
-    //    elem.append(price)
-    //    screen.append(elem)
-
-    //    sercive.innerHTML = el.service
-    //    price.innerHTML = el.price
-    // })
-
-
 }
+
 const support = (screen)=>{
-    openedWelcome = false
-    screen.innerHTML = `<input placeholder='Send us message'></input>
-    <button id = "but">SUBMIT</button`
+    screen.innerHTML = ""
+    video.play()
+    setTimeout(()=>{
+     video.pause()
+    }, 3000)
+    screen.innerHTML = `<textarea id = 'inp' cols='40' rows='5' placeholder = 'Send us message'></textarea>
+    <button class = 'but'>SUBMIT</button`
     document.getElementById("but").addEventListener("click",()=>{
         console.log("cliked!")
     })
 }
 const contacts = (screen)=>{
-    openedWelcome = false
-    screen.innerHTML = "Contacts"
+    screen.innerHTML = ""
+    video.play()
+    setTimeout(()=>{
+     video.pause()
+    }, 3000)
+    screen.innerHTML = `<div class = 'cont'>
+      Mail: blabla@mail.ru <br><br>
+      Tel: +8 959 5651 11
+    </div>`
 }
 
 const onTab = (str)=>{
@@ -64,13 +55,13 @@ const onTab = (str)=>{
    screen.style.display = "flex"
    screen.style.flexDirection = "column"
    switch(str) {
-       case !openedWelcome && 'welcome':
+       case true && 'welcome':
        welcome(screen)
        break;
-       case  'support':
+       case  true && 'support':
        support(screen)
        break;
-       case 'contacts':
+       case true && 'contacts':
        contacts(screen)
        break;
    }
